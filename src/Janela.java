@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 
 public class Janela implements ActionListener {
 
+    public static JFrame frame;
+    public static JPanel panel;
     private static JLabel labelUsuario;
     private static JTextField textUsuario;
     private static JLabel labelSenha;
@@ -17,13 +19,14 @@ public class Janela implements ActionListener {
     private static JButton botao;
     private static JLabel sucesso;
     
-    public static void principal() {
-    
-        JFrame frame = new JFrame();
-        JPanel panel = new JPanel();
+    public void principal() {
         
+        frame = new JFrame();
+        panel = new JPanel();
+
         frame.setSize(300, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.add(panel);
 
         panel.setLayout(null);
@@ -63,7 +66,8 @@ public class Janela implements ActionListener {
         String usuario = textUsuario.getText();
         String senha = textSenha.getText();    
         if (usuario.equals("curioso@gmail.com") && senha.equals("testando123")) {
-            sucesso.setText("Login Autorizado.");
+            frame.setVisible(false);
+            new Logado();
         } else {
             sucesso.setText("Login Negado.");
         }
