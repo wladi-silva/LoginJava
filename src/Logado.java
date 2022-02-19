@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 public class Logado extends JFrame {
     

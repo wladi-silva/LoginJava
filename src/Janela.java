@@ -64,7 +64,8 @@ public class Janela implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String usuario = textUsuario.getText();
-        String senha = textSenha.getText();    
+        String senha = textSenha.getText();
+        System.out.println(senha);
         if (usuario.equals("curioso@gmail.com") && senha.equals("testando123")) {
             frame.setVisible(false);
             new Logado();
